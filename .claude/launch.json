@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Next.js Dev Server",
+      "runtimeExecutable": "wsl",
+      "runtimeArgs": ["bash", "-i", "-c", "cd ~/projects/street-corner && npm run dev"],
+      "port": 3000
+    }
+  ]
+}
