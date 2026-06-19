@@ -490,9 +490,9 @@ function MenuSection() {
               </div>
               <h3 className="font-black text-white text-lg mb-2 uppercase tracking-wide">{item.name}</h3>
               <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>{item.description}</p>
-              {item.variants ? (
+              {(item as {variants?: {label: string; price: string}[]}).variants ? (
                 <div className="space-y-2">
-                  {item.variants.map(v => (
+                  {(item as {variants: {label: string; price: string}[]}).variants.map(v => (
                     <div key={v.label} className="flex justify-between items-center text-sm">
                       <span style={{ color: "rgba(255,255,255,0.55)" }}>{v.label}</span>
                       <span className="font-black" style={{ color: "#FFD700" }}>{v.price}</span>
@@ -500,7 +500,7 @@ function MenuSection() {
                   ))}
                 </div>
               ) : (
-                <div className="price-tag">{item.price}</div>
+                <div className="price-tag">{(item as {price?: string}).price}</div>
               )}
             </div>
           ))}
