@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 const MENU_CATEGORIES = [
   {
     id: "sale",
-    label: "🌮 Salé",
+    label: "🍽️ Salé",
     items: [
       {
         name: "Tacos à Composer",
@@ -33,9 +33,9 @@ const MENU_CATEGORIES = [
         description: "Baguette généreuse garnie, sauce fromagère maison, gratinée à la perfection",
         tag: "Nouveauté",
         variants: [
-          { label: "L'Ultime Tenders Mozza Bacon", price: "Prix sur place" },
-          { label: "Le Curry Cheddar Bacon", price: "Prix sur place" },
-          { label: "Le Tandoori Mozza Cheddar", price: "Prix sur place" },
+          { label: "L'Ultime Tenders Mozza Bacon", price: "8,90€" },
+          { label: "Le Curry Cheddar Bacon", price: "8,90€" },
+          { label: "Le Tandoori Mozza Cheddar", price: "8,90€" },
         ],
       },
       {
@@ -169,7 +169,7 @@ const OFFRES_ITEMS = [
   { img: "9.jpeg",  cat: "burger",    name: "O'Burgers",              price: "3€90" },
   { img: "1.jpeg",  cat: "bowls",     name: "Bowl à Composer",        price: "6€90" },
   { img: "24.jpeg", cat: "bowls",     name: "Salade à Composer",      price: "6€90" },
-  { img: "4.jpeg",  cat: "sandwichs", name: "Back to Baguette",       price: "Prix sur place" },
+  { img: "4.jpeg",  cat: "sandwichs", name: "Back to Baguette",       price: "8,90€" },
   { img: "8.jpeg",  cat: "sandwichs", name: "Fricassé Tunisienne",    price: "4€90" },
   { img: "11.jpeg", cat: "sandwichs", name: "O'Makloub",              price: "7€20" },
   { img: "13.jpeg", cat: "sandwichs", name: "O'Paninis",              price: "5€50" },
@@ -942,9 +942,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <TickerStrip />
+      <GallerySection />
       <MenuSection />
       <OffresSection />
-      <GallerySection />
       <AboutSection />
       <ContactSection />
       <Footer />
