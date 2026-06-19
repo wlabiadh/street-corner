@@ -341,9 +341,17 @@ function Navbar() {
             </li>
           ))}
         </ul>
-        <a href="#contact" className="hidden md:block yellow-btn px-5 py-2 rounded-full text-sm font-black">
-          Nous Trouver
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          <a href="tel:0363560232" className="text-sm font-bold tracking-wide transition-colors"
+            style={{ color: "rgba(255,255,255,0.7)" }}
+            onMouseOver={e => { (e.currentTarget as HTMLAnchorElement).style.color = "#FFD700"; }}
+            onMouseOut={e => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.7)"; }}>
+            📞 03 63 56 02 32
+          </a>
+          <a href="#contact" className="yellow-btn px-5 py-2 rounded-full text-sm font-black">
+            Nous Trouver
+          </a>
+        </div>
         <button className="md:hidden text-white p-2 flex flex-col gap-1.5" onClick={() => setMobileOpen(!mobileOpen)}>
           <div className={`w-6 h-0.5 bg-white transition-all ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
           <div className={`w-6 h-0.5 bg-white transition-all ${mobileOpen ? "opacity-0" : ""}`} />
