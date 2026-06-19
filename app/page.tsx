@@ -297,72 +297,6 @@ function SplashScreen({ onDone }: { onDone: () => void }) {
   );
 }
 
-const RAP_LYRICS = `Yo ! Bienvenue chez Street Corner, Pontarlier représente !
-Tacos X X L, pizzas pâte fraîche, c'est évident !
-Burgers juteux, bowls gourmands, sandwichs qui régalent,
-Panuzzis dorés, fricassés tunisiennes, la carte qui balance !
-Tout est halal, tout est frais, fait avec passion,
-Desserts maison, milkshakes, smoothies, livraison !
-Sur place ou chez toi, on est là tous les jours,
-Street Corner, y'en a pour tous les goûts, on assure toujours !`;
-
-function RapButton() {
-  const [playing, setPlaying] = useState(false);
-
-  const toggle = () => {
-    if (!("speechSynthesis" in window)) return;
-    if (playing) {
-      window.speechSynthesis.cancel();
-      setPlaying(false);
-      return;
-    }
-    const utter = new SpeechSynthesisUtterance(RAP_LYRICS);
-    utter.lang = "fr-FR";
-    utter.rate = 1.28;
-    utter.pitch = 0.82;
-    utter.onend = () => setPlaying(false);
-    utter.onerror = () => setPlaying(false);
-    window.speechSynthesis.speak(utter);
-    setPlaying(true);
-  };
-
-  return (
-    <button
-      onClick={toggle}
-      title={playing ? "Arrêter" : "Écouter notre rap !"}
-      style={{
-        position: "fixed",
-        bottom: "28px",
-        right: "24px",
-        zIndex: 100,
-        background: playing
-          ? "linear-gradient(135deg,#FF6B00,#FFD700)"
-          : "linear-gradient(135deg,#FFD700,#FFA500)",
-        color: "#000",
-        border: "none",
-        borderRadius: "100px",
-        padding: "12px 20px",
-        fontWeight: 900,
-        fontSize: "0.82rem",
-        textTransform: "uppercase",
-        letterSpacing: "1px",
-        cursor: "pointer",
-        display: "flex",
-        alignItems: "center",
-        gap: "8px",
-        boxShadow: playing
-          ? "0 0 0 4px rgba(255,107,0,0.25), 0 8px 24px rgba(255,165,0,0.4)"
-          : "0 8px 24px rgba(255,165,0,0.3)",
-        transition: "all 0.3s ease",
-        animation: playing ? "pulseRing 1.5s ease-out infinite" : "none",
-      }}
-    >
-      <span style={{ fontSize: "1.1rem" }}>{playing ? "⏹" : "🎤"}</span>
-      {playing ? "Stop" : "Notre Rap"}
-    </button>
-  );
-}
-
 function Logo() {
   return (
     <img
@@ -502,15 +436,16 @@ function Hero() {
           </a>
         </div>
 
-        <div className="animate-fade-up delay-500 flex justify-center items-center gap-10 flex-wrap">
-          {[{ v: "7j/7", l: "Ouvert" }, { v: "100%", l: "Frais" }, { v: "🚴", l: "Livraison" }].map((s, i) => (
-            <div key={i} className="text-center">
-              <div className="stat-number text-2xl font-black">{s.v}</div>
-              <div className="text-xs uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>{s.l}</div>
-            </div>
-          ))}
-          <div style={{ width: "1px", height: "40px", background: "rgba(255,255,255,0.1)" }} className="hidden sm:block" />
-          <img src="/gallery/logo/halal-badge.svg" alt="Halal Certifié" style={{ height: "72px", width: "72px" }} />
+        <div className="animate-fade-up delay-500 flex flex-col items-center gap-6">
+          <div className="flex justify-center items-center gap-10">
+            {[{ v: "7j/7", l: "Ouvert" }, { v: "100%", l: "Frais" }, { v: "🚴", l: "Livraison" }].map((s, i) => (
+              <div key={i} className="text-center">
+                <div className="stat-number text-2xl font-black">{s.v}</div>
+                <div className="text-xs uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>{s.l}</div>
+              </div>
+            ))}
+          </div>
+          <img src="/gallery/logo/halal-badge.svg" alt="Halal Certifié" style={{ height: "52px", width: "52px", opacity: 0.92 }} />
         </div>
       </div>
 
@@ -1016,7 +951,6 @@ export default function Home() {
   return (
     <main style={{ minHeight: "100vh", background: "#0a0a0a" }}>
       {!splashDone && <SplashScreen onDone={() => setSplashDone(true)} />}
-      {splashDone && <RapButton />}
       <Navbar />
       <Hero />
       <TickerStrip />
