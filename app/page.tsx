@@ -288,6 +288,7 @@ function SplashScreen({ onDone }: { onDone: () => void }) {
           textTransform: "uppercase",
           fontWeight: 700,
           position: "relative",
+          textAlign: "center",
         }}
       >
         Y&apos;en a pour tous les goûts
