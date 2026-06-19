@@ -302,7 +302,7 @@ function Logo() {
     <img
       src="/gallery/logo/Logo Street Corner.svg"
       alt="Street Corner"
-      style={{ height: "80px", width: "auto" }}
+      className="h-14 md:h-20 w-auto"
     />
   );
 }
@@ -381,7 +381,7 @@ function Hero() {
   useEffect(() => { setMounted(true); }, []);
 
   return (
-    <section id="accueil" className="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section id="accueil" className="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-28 md:pt-20">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-10 w-96 h-96 rounded-full opacity-5"
           style={{ background: "radial-gradient(circle, #FFD700, transparent)" }} />
