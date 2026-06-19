@@ -445,7 +445,7 @@ function Hero() {
               </div>
             ))}
           </div>
-          <img src="/gallery/logo/halal-badge.svg" alt="Halal Certifié" style={{ height: "52px", width: "52px", opacity: 0.92 }} />
+          <img src="/gallery/logo/halal-badge.svg" alt="Halal Certifié" style={{ height: "52px", width: "52px", opacity: 0.92, marginBottom: "32px" }} />
         </div>
       </div>
 
