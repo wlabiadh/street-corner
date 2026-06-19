@@ -436,13 +436,15 @@ function Hero() {
           </a>
         </div>
 
-        <div className="animate-fade-up delay-500 flex justify-center gap-10">
+        <div className="animate-fade-up delay-500 flex justify-center items-center gap-10 flex-wrap">
           {[{ v: "7j/7", l: "Ouvert" }, { v: "100%", l: "Frais" }, { v: "🚴", l: "Livraison" }].map((s, i) => (
             <div key={i} className="text-center">
               <div className="stat-number text-2xl font-black">{s.v}</div>
               <div className="text-xs uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>{s.l}</div>
             </div>
           ))}
+          <div style={{ width: "1px", height: "40px", background: "rgba(255,255,255,0.1)" }} className="hidden sm:block" />
+          <img src="/gallery/logo/halal-badge.svg" alt="Halal Certifié" style={{ height: "72px", width: "72px" }} />
         </div>
       </div>
 

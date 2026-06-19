@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="97" fill="#ffffff" stroke="#1b6e38" stroke-width="7"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#1b6e38" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <circle cx="100" cy="56" r="27" fill="#1b6e38"/>
+  <circle cx="113" cy="46" r="22" fill="#ffffff"/>
+  <polygon points="133,50 135.2,57 142.5,57 136.7,61.3 138.9,68.3 133,64 127.1,68.3 129.3,61.3 123.5,57 130.8,57" fill="#c8a020"/>
+  <text x="100" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#1b6e38">حلال</text>
+  <text x="100" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="6" fill="#1b6e38">HALAL</text>
+  <line x1="46" y1="148" x2="154" y2="148" stroke="#c8a020" stroke-width="1.5"/>
+  <text x="100" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="3.5" fill="#1b6e38">CERTIFIÉ</text>
+</svg>
